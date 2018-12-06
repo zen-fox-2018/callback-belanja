@@ -1,1 +1,25 @@
 //your code here
+const beli = require('./beli.js');
+class Items {
+  constructor(item, harga, waktu) {
+    this.item = item;
+    this.harga = harga;
+    this.waktu = waktu;
+  }
+}
+
+let permen = new Items('Permen', 5000, 2000);
+let gorengan = new Items('Gorengan', 20000, 3000);
+let kopi = new Items('Kopi', 16000, 5000);
+let snack = new Items('Snack', 15000, 2000);
+let susu = new Items('Susu', 20000, 5000);
+
+beli(50000, permen,function(kembalian){
+  beli(kembalian, kopi, function(kembalian){
+    beli(kembalian, susu, function(kembalian){
+      beli(kembalian, gorengan, function(kembalian){
+        console.log(kembalian);
+      })
+    })
+  })
+})
