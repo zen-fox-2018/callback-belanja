@@ -6,10 +6,13 @@ function beli(uang, obj, cb){
       console.log(`Saya sudah membeli ${obj.item} uang kembaliannya ${kembalian}`);
       cb(kembalian)
     }else{
+      kembalian = uang
       console.log(`uang gk cukup nih buat beli ${obj.item} kembaliannya cuma ${kembalian}`);
-      cb(0)
+      cb(kembalian)
     }
   }, obj.waktu);
 }
+
+
 
 module.exports = beli;
