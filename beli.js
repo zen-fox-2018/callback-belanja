@@ -9,7 +9,10 @@ function beli(uang, obj, cb){
       console.log(`uang gk cukup nih buat beli ${obj.item} kembaliannya cuma ${kembalian}`);
       cb(0)
     }
-  }, obj.waktu);
+  }, obj.waktu)
+
 }
+
+
 
 module.exports = beli;
